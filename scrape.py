@@ -58,6 +58,7 @@ else:
 
 sosts = get_sostitutions(classe)
 
+build_csv(sosts)
 
 
 
