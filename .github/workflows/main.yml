@@ -1,7 +1,7 @@
 name: My Periodic Workflow
 on:
   schedule:
-    - cron: '36 17 * * *'
+    - cron: '* * * * *'
 jobs:
   my-job:
     runs-on: ubuntu-latest
