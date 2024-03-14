@@ -4,8 +4,6 @@ import re
 import csv
 
 
-
-
 def get_sostitutions(classe):
     URL = "https://sostituzionidocenti.com/fe/controllaCodice.php"
     payload = {"pass": "FE71199LC"}
@@ -36,18 +34,17 @@ def get_sostitutions(classe):
                         "note": note
                     }
                     
-                    return sost
-                    #print(f"Hour: {hour}, Teacher: {teacher},  Replacement: {repl_teach}, Notes: {note}")
-                    
+    return sost 
+                     #print(f"Hour: {hour}, Teacher: {teacher},  Replacement: {repl_teach}, Notes: {note}")              
 def build_csv():
-    sosts = get_sostitutions("5AI")
+    sosts = get_sostitutions("4AI")
     with open('substitutions.csv', mode='w', newline='', encoding='utf-8') as f:
-    fieldnames = ['hour', 'teacher', 'replacement', 'note']
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
+        fieldnames = ['hour', 'teacher', 'replacement', 'note']
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
 
-    writer.writeheader()
-    for i, sost in enumerate(sosts.values()):
-        writer.writerow(sost)            
+        writer.writeheader()
+        for i, sost in enumerate(sosts.values()):
+            writer.writerow(sost)            
 
 
 
