@@ -39,7 +39,7 @@ def get_sostitutions(classe):
                     return sost
                     #print(f"Hour: {hour}, Teacher: {teacher},  Replacement: {repl_teach}, Notes: {note}")
                     
-def build_csv(sosts):
+def build_csv():
     sosts = get_sostitutions("5AI")
     with open('substitutions.csv', mode='w', newline='', encoding='utf-8') as f:
     fieldnames = ['hour', 'teacher', 'replacement', 'note']
