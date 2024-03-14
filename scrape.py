@@ -40,6 +40,7 @@ def get_sostitutions(classe):
                     #print(f"Hour: {hour}, Teacher: {teacher},  Replacement: {repl_teach}, Notes: {note}")
                     
 def build_csv(sosts):
+    sosts = get_sostitutions("5AI")
     with open('substitutions.csv', mode='w', newline='', encoding='utf-8') as f:
     fieldnames = ['hour', 'teacher', 'replacement', 'note']
     writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -50,15 +51,14 @@ def build_csv(sosts):
 
 
 
-classe = input("Classe --> ")
+'''classe = input("Classe --> ")
 if(classe == ""):
     classe = "5AI"
 else:
-    classe = classe.capitalize()
+    classe = classe.capitalize()'''
 
-sosts = get_sostitutions(classe)
 
-build_csv(sosts)
+
 
 
 
