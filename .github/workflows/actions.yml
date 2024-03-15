@@ -29,13 +29,13 @@ jobs:
           python main.py
           git config --local user.email "matteo2881@gmail.com"
           git config --local user.name "DarkAngel2881"
-          git add output.csv
-          git commit -m "Add output.csv"
+          git add substitutions.csv
+          git commit -m "Add substitutions.csv"
       
       - name: upload CSV file artifact
         uses: actions/upload-artifact@v2
         with:
-          name: outputcsv
+          name: substitutionscsc
           path: substitutions.csv
 
 
