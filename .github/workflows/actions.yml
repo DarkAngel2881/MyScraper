@@ -25,5 +25,12 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python main.py
+        run: |
+          python main.py
+      
+      - name: upload CSV file artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: outputcsv
+          path: substitutions.csv
           
