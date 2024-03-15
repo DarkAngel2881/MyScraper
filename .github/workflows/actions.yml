@@ -27,10 +27,22 @@ jobs:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: |
           python main.py
+          git config --local user.email "matteo2881@gmail.com"
+          git config --local user.name "DarkAngel2881"
+          git add output.csv
+          git commit -m "Add output.csv"
       
       - name: upload CSV file artifact
         uses: actions/upload-artifact@v2
         with:
           name: outputcsv
           path: substitutions.csv
+
+
+      - name: push the changes to the main branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          file: output.csv
           
