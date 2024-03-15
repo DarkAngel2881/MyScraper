@@ -44,5 +44,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-          file: output.csv
+          file: substitions.csv
           
