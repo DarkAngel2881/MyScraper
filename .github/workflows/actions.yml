@@ -32,17 +32,5 @@ jobs:
           git add substitutions.csv
           git commit -m "Add substitutions.csv"
       
-      - name: upload CSV file artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: substitutionscsc
-          path: substitutions.csv
 
-
-      - name: push the changes to the main branch
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          file: substitions.csv
           
